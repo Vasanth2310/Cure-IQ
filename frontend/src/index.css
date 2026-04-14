@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Light Mode Colors */
+  --bg-color: #f0f4f8;
+  --surface-color: rgba(255, 255, 255, 0.7);
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --primary-color: #3182ce;
+  --primary-hover: #2b6cb0;
+  --accent-color: #48bb78;
+  --danger-color: #e53e3e;
+  
+  /* Glassmorphism Tokens */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  
+  /* Neumorphism Shadow (optional accents) */
+  --neu-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+  --neu-inner-shadow: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff;
+  
+  --font-family: 'Inter', sans-serif;
+  --border-radius: 16px;
+  --border-radius-sm: 8px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+[data-theme='dark'] {
+  --bg-color: #0f172a;
+  --surface-color: rgba(30, 41, 59, 0.6);
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --primary-color: #3b82f6;
+  --primary-hover: #60a5fa;
+  --accent-color: #10b981;
+  --danger-color: #ef4444;
+  
+  --glass-bg: rgba(30, 41, 59, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  --neu-shadow: 8px 8px 16px #090e1a, -8px -8px 16px #15203a;
+  --neu-inner-shadow: inset 4px 4px 8px #090e1a, inset -4px -4px 8px #15203a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: var(--transition);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism Class Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--border-radius);
+  padding: 24px;
+}
+
+.neu-panel {
+  background: var(--bg-color);
+  box-shadow: var(--neu-shadow);
+  border-radius: var(--border-radius);
+  padding: 24px;
+}
+
+.neu-panel-inner {
+  background: var(--bg-color);
+  box-shadow: var(--neu-inner-shadow);
+  border-radius: var(--border-radius);
+  padding: 24px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Base Layout Config */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Component Styles will be added in modular CSS or here */
